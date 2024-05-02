@@ -12,10 +12,12 @@ use Illuminate\Auth\AuthManager;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Ilzrv\LaravelSteamAuth\Exceptions\Authentication\AuthenticationException;
 use Ilzrv\LaravelSteamAuth\Exceptions\Authentication\SteamResponseNotValidAuthenticationException;
 use Ilzrv\LaravelSteamAuth\Exceptions\Validation\ValidationException;
 use Ilzrv\LaravelSteamAuth\SteamAuthenticator;
 use Ilzrv\LaravelSteamAuth\SteamUserDto;
+use Psr\Http\Client\ClientExceptionInterface;
 
 final class SteamAuthController
 {
@@ -38,26 +40,34 @@ final class SteamAuthController
             return $redirector->to(
                 $steamAuthenticator->buildAuthUrl()
             );
+        } catch (AuthenticationException|\JsonException|ClientExceptionInterface $e) {
         }
 
         $steamUser = $steamAuthenticator->getSteamUser();
 
-        $authManager->login(
-            $this->firstOrCreate($steamUser),
-            true
-        );
+        $user = $this->firstOrCreate($steamUser);
+
+        // Actualizar nombre y avatar del usuario
+        $user->name = $steamUser->getPersonaName();
+        $user->avatar = $steamUser->getAvatarFull();
+        $user->save();
+
+        $authManager->login($user, true);
 
         return $redirector->to('/');
     }
 
     private function firstOrCreate(SteamUserDto $steamUser): User
     {
+        $toSteamID = intval(($steamUser->getSteamId()- 76561197960265728) / 2);
+        $transform = "STEAM_1:1:".(String)$toSteamID;
         return User::firstOrCreate([
             'steam_id' => $steamUser->getSteamId(),
         ], [
             'name' => $steamUser->getPersonaName(),
             'avatar' => $steamUser->getAvatarFull(),
             'player_level' => $steamUser->getPlayerLevel(),
+            'steamStat' => $transform
             // ...and other what you need
         ]);
     }

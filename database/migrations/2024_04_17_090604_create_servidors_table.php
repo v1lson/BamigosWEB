@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('servidores', function (Blueprint $table) {
             $table->id();
             $table->string("ip");
+            $table->integer("puerto");
             $table->string("nombre");
+            $table->string("categoria");
             $table->string("create_by");
             $table->timestamps();
         });

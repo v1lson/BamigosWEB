@@ -9,5 +9,5 @@ class Servidor extends Model
 {
     use HasFactory;
     protected $table="servidores"; // Tabla de base de datos
-    protected $fillable=['ip','nombre','create_by']; // Sirve para mandar un array para no ir campo a campo
+    protected $fillable=['ip','puerto','nombre','create_by', 'categoria']; // Sirve para mandar un array para no ir campo a campo
 }

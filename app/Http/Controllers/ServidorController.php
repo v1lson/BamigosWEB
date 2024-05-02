@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\SourceQuery\SourceQuery;
 use App\Models\Servidor;
 use App\Http\Requests\StoreServidorRequest;
 use App\Http\Requests\UpdateServidorRequest;
+use Exception;
 
 class ServidorController extends Controller
 {
@@ -13,7 +15,18 @@ class ServidorController extends Controller
      */
     public function index()
     {
-        return view("main");
+        $servidores = Servidor::orderBy('categoria')->take(6)->get();
+        return view("main", compact("servidores"));
+    }
+    public function categoria($cat)
+    {
+        if ($cat === "Todos"){
+            $servidores = Servidor::orderBy('categoria')->take(6)->get();
+        }else{
+            $servidores = Servidor::where("categoria",$cat)->take(6)->get();
+        }
+
+        return view('main', compact('servidores'));
     }
 
     /**

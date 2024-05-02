@@ -4,3 +4,8 @@
 .card-body{
     padding: 1rem;
 }
+.progress{
+    background-color: #b3b3b3;
+    height: 0.3rem;
+    transform: rotate(270deg);
+}

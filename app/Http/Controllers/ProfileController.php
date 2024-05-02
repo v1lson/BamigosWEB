@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Estadistica;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +13,16 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    public function show($id)
+    {
+        $usuario = User::findOrFail($id);
+        $steamStat = $usuario->steamStat;
+        $buscar = explode(":", $steamStat);
+
+        $datos = Estadistica::where('steam', 'LIKE', "%{$buscar[2]}")->get();
+
+        return view('profile.show', compact('usuario'),compact('datos'));
+    }
     /**
      * Display the user's profile form.
      */

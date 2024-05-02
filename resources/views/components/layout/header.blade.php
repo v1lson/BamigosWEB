@@ -1,7 +1,10 @@
-<header class="hidden bg-principal text-white sm:flex flex-row justify-around items-center h-70p">
+<header class="hidden bg-principal text-white sm:flex flex-row justify-around items-center h-[70px]">
     <div class="navbar">
         <div class="flex-1">
-            <a href="/" class="btn btn-ghost text-xl"><h1>Bamigos</h1></a>
+            <a href="/" class="btn btn-ghost text-xl">
+                <img class="h-10 fill-white" src="{{asset("images/logo.png")}}" alt="logo"/>
+                <h1>Bamigos</h1>
+            </a>
         </div>
         @guest
             <a href="/login">
@@ -25,11 +28,10 @@
                 </div>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="" class="justify-between">
+                        <a href="{{ route('profile.show', ['id' => auth()->user()->id]) }}" class="justify-between">
                           Mi Perfil
                         </a>
                     </li>
-                    <li><a>Settings</a></li>
                     <li><a> <form action="{{route("logout")}}" method="post">
                                 @csrf
                                 <button class="" type="submit">Logout</button>
