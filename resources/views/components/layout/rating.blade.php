@@ -17,7 +17,7 @@
         }
         ?>
     @if(count(collect($estadisticas)) > 0)
-    <div class=" h-full mb-5">
+    <div class="h-full mb-5">
         <h2 class="py-1 bg-white w-1/2 text-center mb-2 shadow-[3px_3px_0px_rgba(255,94,58,1)]">{{$servidor->nombre}}</h2>
         <div class="bg-white w-80 h-44 flex items-end rounded-xl justify-stretch shadow">
             @if(count(collect($estadisticas)) > 1)
@@ -67,8 +67,8 @@
                         <span class="text-xs">{{ $estadisticas[0]['value'] }}</span>
                     </a>
                 @endif
-            @if(count(collect($estadisticas)) > 2)
             </div>
+            @if(count(collect($estadisticas)) > 2)
             <div class="flex flex-col items-center pb-3 w-1/3">
                 <svg class="-mb-2 z-10" width="32px" height="32px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

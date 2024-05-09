@@ -6,6 +6,7 @@ use App\Http\Requests\StoreEstadisticaRequest;
 use App\Http\Requests\UpdateEstadisticaRequest;
 use App\Models\Estadistica;
 use App\Models\Servidor;
+use Illuminate\Http\Request;
 
 class EstadisticaController extends Controller
 {
@@ -20,8 +21,10 @@ class EstadisticaController extends Controller
         return view("paginas.estadistica", compact("estadisticas"), compact("servidores"));
     }
 
-    public function show($id_servidor, $order_by, $orden)
+    public function show($id_servidor, $order_by, $orden, Request $request)
     {
+        $steamId = $request->query('steamId');
+        $nombreBusqeuda = $request->query('nombre');
         session(['id_servidor' => $id_servidor]);
         if (session('order_by') === $order_by) {
             if ($orden === 'desc') {
@@ -35,8 +38,15 @@ class EstadisticaController extends Controller
             session(['orden' => 'asc']);
         }
         $servidores = Servidor::orderBy('categoria')->get();
-        $estadisticas = Estadistica::where("id_server",$id_servidor)->orderBy($order_by , $orden)->paginate(8);
-        return view("paginas.estadistica", compact("estadisticas"), compact("servidores"));
+        $estadisticas = Estadistica::where("id_server",$id_servidor);
+        if (!$steamId == null) {
+            $estadisticas = $estadisticas->where('steam',$steamId);
+        }
+        if (!$nombreBusqeuda == null) {
+            $estadisticas = $estadisticas->where('name',$nombreBusqeuda);
+        }
+        $estadisticas = $estadisticas->orderBy($order_by , $orden)->paginate(8);
+        return view("paginas.estadistica", compact("estadisticas",'servidores','steamId','nombreBusqeuda'));
     }
     /**
 

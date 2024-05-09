@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Bans;
 use App\Models\Estadistica;
+use App\Models\Mute;
+use App\Models\RolUser;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,8 +23,10 @@ class ProfileController extends Controller
         $buscar = explode(":", $steamStat);
 
         $datos = Estadistica::where('steam', 'LIKE', "%{$buscar[2]}")->get();
-
-        return view('profile.show', compact('usuario'),compact('datos'));
+        $rol = RolUser::select('nombre')->where('id',$usuario->rol)->value('nombre');
+        $bans = Bans::where('steam_id',$usuario->steamStat)->get();
+        $mutes = Mute::where('steam_id',$usuario->steamStat)->get();
+        return view('profile.show', compact('usuario','datos','rol','bans','mutes'));
     }
     /**
      * Display the user's profile form.
@@ -33,20 +38,25 @@ class ProfileController extends Controller
         ]);
     }
 
+
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request)
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $id = $request->input('idUser');
+        $rol = $request->input('rol');
+        $user = User::find($id);
+        if ($user != null) {
+            $user->rol = $rol;
+            $user->save();
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        $rolAddUser = RolUser::find($rol);
+        $roles = RolUser::all();
+        return redirect()->route('Roles.index')->with([
+            'roles' => $roles,
+            'rolAddUser' => $rolAddUser
+        ]);
     }
 
     /**

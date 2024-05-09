@@ -1,3 +1,4 @@
+@php use App\Models\RolUser; @endphp
 <header class="hidden bg-principal text-white sm:flex flex-row justify-around items-center h-[70px]">
     <div class="navbar">
         <div class="flex-1">
@@ -20,7 +21,7 @@
                    <span class="text-white text-right font-light">
                        <b class="font-bold">{{auth()->user()->name}}</b>
                    <br>
-                       Administrador
+                       {{RolUser::select('nombre')->where('id',auth()->user()->rol)->value('nombre')}}
                    </span>
                     <div class="w-10 rounded-full">
                         <img alt="Tailwind CSS Navbar component" src="{{auth()->user()->avatar}}" />

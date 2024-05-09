@@ -1,5 +1,16 @@
-
+@php use App\Models\Servidor; @endphp
 @extends("layouts.layout")
+@section("cabecera")
+    <style>
+        th, td{
+            text-align: center;
+        }
+        .input:focus,   .input:focus-within{
+            outline: none;
+            border: none;
+        }
+    </style>
+@endsection
 
 @section("contenido")
     <?php
@@ -19,7 +30,7 @@
                 <h2 class="text-2xl">{{ $usuario->name }}</h2>
             </a>
             <span>{{ $usuario->steamStat }}</span>
-            <p >Administrador</p>
+            <p class="<?php if($rol == 'Administrador'){echo 'text-red-700 font-bold';}?>">{{ $rol}}</p>
             @foreach($datos as $dato)
             <?php
                     $puntos+=$dato->value;
@@ -105,6 +116,95 @@
                 ?>
             </div>
         </div>
+    </div>
+    <div class="overflow-x-auto mt-5 mr-6">
+        <h3 class="py-1 bg-white w-24 mb-5 text-center mb-2 shadow-[3px_3px_0px_rgba(255,94,58,1)]">Bans</h3>
+        <table class="table bg-white shadow table-zebra">
+            <tr>
+                <th>Servidor</th>
+                <th>Estado</th>
+                <th>Razon</th>
+                <th>Nombre Moderador</th>
+                <th>Inicio</th>
+                <th>Final</th>
+            </tr>
+            @if(count($bans)==0)
+                <tr>
+                    <td class="text-center" colspan="7">Este jugador no tiene Bans</td>
+                </tr>
+            @endif
+            @foreach($bans as $ban)
+                    <?php
+                    $inicio = new DateTime();
+                    $final = new DateTime();
+                    $fechaActual = time();
+                    if ($fechaActual >= $ban->tiempo_final){
+                        $ban->estado = 0;
+                        $ban->save();
+                    }else{
+                        $ban->estado = 1;
+                        $ban->save();
+                    }
+                    $inicio->setTimestamp($ban->tiempo_inicio+7200);
+                    $final->setTimestamp($ban->tiempo_final+7200);
+                    ?>
+                <tr>
+                    <td>{{Servidor::where('id',$ban->id_servidor)->value('nombre')}}</td>
+                    <td>
+                        <div style="margin: 0 auto" class="w-3 h-3 <?php if($ban->estado){echo 'bg-red-700';}else{echo 'bg-green-700';}?> rounded-full"></div>
+                    </td>
+                    <td>{{$ban->razon}}</td>
+                    <td>{{$ban->nombre_moderador}}</td>
+                    <td>{{$inicio->format('d/m/Y H:i')}}</td>
+                    <td>{{$final->format('d/m/Y H:i')}}</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
+
+    <div class="overflow-x-auto mt-5 mr-6">
+        <h3 class="py-1 bg-white w-24 mb-5 text-center mb-2 shadow-[3px_3px_0px_rgba(255,94,58,1)]">Mutes</h3>
+        <table class="table bg-white shadow table-zebra">
+            <tr>
+                <th>Servidor</th>
+                <th>Estado</th>
+                <th>Razon</th>
+                <th>Nombre Moderador</th>
+                <th>Inicio</th>
+                <th>Final</th>
+            </tr>
+            @if(count($mutes)==0)
+                <tr>
+                    <td class="text-center" colspan="7">Este jugador no tiene Mutes</td>
+                </tr>
+            @endif
+            @foreach($mutes as $mute)
+                    <?php
+                    $inicio = new DateTime();
+                    $final = new DateTime();
+                    $fechaActual = time();
+                    if ($fechaActual >= $mute->tiempo_final){
+                        $mute->estado = 0;
+                        $mute->save();
+                    }else{
+                        $mute->estado = 1;
+                        $mute->save();
+                    }
+                    $inicio->setTimestamp($mute->tiempo_inicio+7200);
+                    $final->setTimestamp($mute->tiempo_final+7200);
+                    ?>
+                <tr>
+                    <td>{{Servidor::where('id',$mute->id_servidor)->value('nombre')}}</td>
+                    <td>
+                        <div style="margin: 0 auto" class="w-3 h-3 <?php if($mute->estado){echo 'bg-red-700';}else{echo 'bg-green-700';}?> rounded-full"></div>
+                    </td>
+                    <td>{{$mute->razon}}</td>
+                    <td>{{$mute->nombre_moderador}}</td>
+                    <td>{{$inicio->format('d/m/Y H:i')}}</td>
+                    <td>{{$final->format('d/m/Y H:i')}}</td>
+                </tr>
+            @endforeach
+        </table>
     </div>
 @endsection
 

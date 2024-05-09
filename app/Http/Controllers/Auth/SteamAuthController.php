@@ -67,6 +67,7 @@ final class SteamAuthController
             'name' => $steamUser->getPersonaName(),
             'avatar' => $steamUser->getAvatarFull(),
             'player_level' => $steamUser->getPlayerLevel(),
+            'rol' => 3,
             'steamStat' => $transform
             // ...and other what you need
         ]);

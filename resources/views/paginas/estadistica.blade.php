@@ -7,6 +7,11 @@
 
 @section("contenido")
     <h2 class="text-center text-2xl text-principal font-bold">Estadistica</h2>
+    <form class="mt-5 flex flex-row justify-end" action="{{ route('est', ['id_servidor' => session('id_servidor'), 'order_by' => 'value', 'orden' => 'desc']) }}" method="GET">
+        <input type="text" name="nombre" class="input mr-3" placeholder="Nombre" value="<?php if(isset($nombreBusqeuda)){echo $nombreBusqeuda ? : '';}?>"/>
+        <input type="text" name="steamId" class="input" placeholder="Steam ID" value="<?php if(isset($steamId)){echo $steamId ? : '';}?>"/>
+        <input class="btn bg-principal text-white ml-2" type="submit" value="Buscar">
+    </form>
     <ul class="menu bg-white w-56 rounded-box float-left mt-5">
         @foreach($servidores as $servidor)
             @if(session('id_servidor') ==  $servidor->id)
