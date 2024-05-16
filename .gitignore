@@ -6,6 +6,8 @@
 .phpunit.result.cache
 npm-debug.log
 yarn-error.log
+/storage
 /.fleet
 /.idea
 /.vscode
+/datos

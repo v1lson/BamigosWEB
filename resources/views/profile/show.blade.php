@@ -30,7 +30,7 @@
                 <h2 class="text-2xl">{{ $usuario->name }}</h2>
             </a>
             <span>{{ $usuario->steamStat }}</span>
-            <p class="<?php if($rol == 'Administrador'){echo 'text-red-700 font-bold';}?>">{{ $rol}}</p>
+            <p class="<?php if($rol == 'Administrador'){echo 'text-red-700 font-bold';}if($rol == 'Moderador'){echo 'text-blue-700 font-bold';}?>">{{ $rol}}</p>
             @foreach($datos as $dato)
             <?php
                     $puntos+=$dato->value;

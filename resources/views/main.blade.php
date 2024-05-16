@@ -3,7 +3,7 @@
 
 @section("contenido")
     <x-layout.carousel />
-    <div class="float-right mr-10 w-3/12">
+    <div class="float-right mr-1 w-3/12">
         <img src="{{asset("images/Principal.png")}}" alt="" class="w-8/12">
         <div class="card w-8/12 bg-principal shadow-xl mt-10 mr-10">
             <figure class="pt-10">
@@ -24,7 +24,7 @@
     </div>
 @endsection
 @section("titulo")
-    proyecto laravel
+   Bamigos
 @endsection
 @section("descripcion")
     Proyecto de aprendizaje de laravel. usamos los diferentes elementos

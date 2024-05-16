@@ -21,7 +21,12 @@
                    <span class="text-white text-right font-light">
                        <b class="font-bold">{{auth()->user()->name}}</b>
                    <br>
-                       {{RolUser::select('nombre')->where('id',auth()->user()->rol)->value('nombre')}}
+                       @php
+                        $rol = RolUser::select('nombre')->where('id',auth()->user()->rol)->value('nombre');
+                       @endphp
+                       <strong class=" <?php if($rol == 'Administrador'){echo 'text-red-700 font-bold';}if($rol == 'Moderador'){echo 'text-blue-700 font-bold';}?>">
+                           {{ $rol }}
+                       </strong>
                    </span>
                     <div class="w-10 rounded-full">
                         <img alt="Tailwind CSS Navbar component" src="{{auth()->user()->avatar}}" />

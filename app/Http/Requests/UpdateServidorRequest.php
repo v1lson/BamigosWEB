@@ -11,7 +11,7 @@ class UpdateServidorRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateServidorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "categoria" => ["required","min:2"],
+            "nombre" => ["required","min:2"],
+            "ip" => ["required","min:8"],
+            "puerto" => ["required","min:5"],
+            "rcon" => ["required","min:1"],
         ];
     }
 }

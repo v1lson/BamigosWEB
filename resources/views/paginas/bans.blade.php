@@ -103,7 +103,7 @@
                 ?>
             <tr>
                 <td>
-                    <div style="margin: 0 auto"
+                    <div
                          class="w-3 h-3 <?php if($ban->estado){echo 'bg-red-700';}else{echo 'bg-green-700';}?> rounded-full"></div>
                 </td>
                 <td>{{$ban->nombre}}</td>

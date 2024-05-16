@@ -5,12 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="¡Bamigos es tu destino definitivo para encontrar los mejores servidores de Counter-Strike! ¡Únete a nuestra comunidad ahora y disfruta de juegos emocionantes con amigos!">
+    <meta name="keywords" content="Counter-Strike, CS, servidores de CS, juegos en línea, comunidad de juegos, amigos, Bamigos">
+    <meta name="author" content="Equipo Bamigos">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield("titulo")</title>
     @vite("resources/css/app.css")
     @vite("public/js/bienvenida.js")
     @vite("public/js/navscroll.js")
-    <script src="{{ asset("resources/js/alerts.js") }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +26,7 @@
 
 <x-layout.nav />
 
-<main class="ml-64 mt-10 mr-12">
+<main class="ml-0 sm:ml-64 mt-10 mr-12">
     @yield("contenido")
 </main>
 

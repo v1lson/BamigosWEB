@@ -33,5 +33,4 @@ class CheckFlagR
 
         return $next($request);
     }
-    }
 }

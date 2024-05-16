@@ -84,8 +84,14 @@ class RolUserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RolUser $rolUser)
+    public function destroy($rolId)
     {
-        //
+        $usuarios = User::where('rol', $rolId)->get();
+        foreach ($usuarios as $usuario) {
+            $usuario->rol = 2;
+            $usuario->save();
+        }
+        RolUser::where('id', $rolId)->delete();
+        return redirect()->route('Roles.index');
     }
 }

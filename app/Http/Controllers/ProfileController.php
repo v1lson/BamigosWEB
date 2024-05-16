@@ -28,6 +28,13 @@ class ProfileController extends Controller
         $mutes = Mute::where('steam_id',$usuario->steamStat)->get();
         return view('profile.show', compact('usuario','datos','rol','bans','mutes'));
     }
+
+    public function showAdmins()
+    {
+        $admins = User::where('rol',1)->get();
+        $moders = User::where('rol',3)->get();
+        return view('paginas.admins', compact('admins','moders'));
+    }
     /**
      * Display the user's profile form.
      */
