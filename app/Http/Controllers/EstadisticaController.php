@@ -40,10 +40,10 @@ class EstadisticaController extends Controller
         $servidores = Servidor::orderBy('categoria')->get();
         $estadisticas = Estadistica::where("id_server",$id_servidor);
         if (!$steamId == null) {
-            $estadisticas = $estadisticas->where('steam',$steamId);
+            $estadisticas = $estadisticas->where('steam','like', '%'.$steamId.'%');
         }
         if (!$nombreBusqeuda == null) {
-            $estadisticas = $estadisticas->where('name',$nombreBusqeuda);
+            $estadisticas = $estadisticas->where('name','like', '%'.$nombreBusqeuda.'%');
         }
         $estadisticas = $estadisticas->orderBy($order_by , $orden)->paginate(8);
         return view("paginas.estadistica", compact("estadisticas",'servidores','steamId','nombreBusqeuda'));

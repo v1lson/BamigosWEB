@@ -34,10 +34,10 @@ class BansController extends Controller
         $nombreBusqeuda = $request->query('nombre');
         $bans = Bans::where("id_servidor",$id_servidor)->orderBy('tiempo_inicio', 'desc');
         if (!$steamId == null) {
-            $bans = $bans->where('steam_id',$steamId);
+            $bans = $bans->where('steam_id','like', '%'.$steamId.'%');
         }
         if (!$nombreBusqeuda == null) {
-            $bans = $bans->where('nombre',$nombreBusqeuda);
+            $bans = $bans->where('nombre','like', '%'.$nombreBusqeuda.'%');
         }
         if ($estado == 'on') {
             $bans = $bans->where('estado',1);

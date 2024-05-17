@@ -24,8 +24,8 @@ class ProfileController extends Controller
 
         $datos = Estadistica::where('steam', 'LIKE', "%{$buscar[2]}")->get();
         $rol = RolUser::select('nombre')->where('id',$usuario->rol)->value('nombre');
-        $bans = Bans::where('steam_id',$usuario->steamStat)->get();
-        $mutes = Mute::where('steam_id',$usuario->steamStat)->get();
+        $bans = Bans::where('steam_id',$usuario->steamStat)->orderBy('tiempo_inicio','desc')->get();
+        $mutes = Mute::where('steam_id',$usuario->steamStat)->orderBy('tiempo_inicio','desc')->get();
         return view('profile.show', compact('usuario','datos','rol','bans','mutes'));
     }
 
@@ -38,13 +38,6 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
-    {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
-    }
-
 
     /**
      * Update the user's profile information.
@@ -69,21 +62,4 @@ class ProfileController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy(Request $request): RedirectResponse
-    {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
-        $user = $request->user();
-
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
-    }
 }

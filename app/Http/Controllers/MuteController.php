@@ -29,10 +29,10 @@ class MuteController extends Controller
         $servidores = Servidor::orderBy('categoria')->get();
         $mutes = Mute::where("id_servidor",$id_servidor)->orderBy('tiempo_inicio', 'desc');
         if (!$steamId == null) {
-            $mutes = $mutes->where('steam_id',$steamId);
+            $mutes = $mutes->where('steam_id','like', '%'.$steamId.'%');
         }
         if (!$nombreBusqeuda == null) {
-            $mutes = $mutes->where('nombre',$nombreBusqeuda);
+            $mutes = $mutes->where('nombre','like', '%'.$nombreBusqeuda.'%');
         }
         if ($estado == 'on') {
             $mutes = $mutes->where('estado',1);

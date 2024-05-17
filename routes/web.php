@@ -49,6 +49,7 @@ Route::middleware([CheckFlagM::class])->group(function () {
 Route::middleware([CheckFlagL::class])->group(function () {
     Route::resource("Logs", LogController::class);
     Route::get('/Logs/{id_servidor}', [LogController::class, 'show'])->name('logs.show');
+    Route::post('/Logs/{id_servidor}', [LogController::class, 'filtrar'])->name('logs.filter');
 });
 Route::middleware([CheckFlagS::class])->group(function () {
     Route::get('/Servidores', [ServidorController::class, 'verTodos'])->name('serviodres.todos');

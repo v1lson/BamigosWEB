@@ -6,6 +6,8 @@ use App\Http\Requests\StoreLogRequest;
 use App\Http\Requests\UpdateLogRequest;
 use App\Models\Log;
 use App\Models\Servidor;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class LogController extends Controller
 {
@@ -16,7 +18,7 @@ class LogController extends Controller
     {
         $servidores = Servidor::orderBy('categoria')->get();
         session(['id_servidor' => $servidores[0]->id]);
-        $logs = Log::where('id_servidor', session('id_servidor'))->orderBy('tiempo','desc')->paginate(100);
+        $logs = Log::where('id_servidor', session('id_servidor'))->orderBy('tiempo','desc')->paginate(90);
         $tipos = Log::select('tipo')->distinct('tipo')->get();
         return view('paginas.logs', compact('servidores','logs','tipos'));
     }
@@ -24,8 +26,46 @@ class LogController extends Controller
     {
         $servidores = Servidor::orderBy('categoria')->get();
         session(['id_servidor' => $id_servidor]);
-        $logs = Log::where('id_servidor', session('id_servidor'))->orderBy('tiempo','desc')->paginate(100);
-        return view('paginas.logs', compact('servidores','logs'));
+        $logs = Log::where('id_servidor', session('id_servidor'))->orderBy('tiempo','desc')->paginate(90);
+        $tipos = Log::select('tipo')->distinct('tipo')->get();
+        return view('paginas.logs', compact('servidores','logs','tipos'));
+    }
+    public function filtrar(Request $request,$id_servidor)
+    {
+        $tipoSel = $request->input('tipo');
+        $nombreBusqeuda = $request->input('nombre');
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        $steamId = $request->input('steamId');
+        $desdeFormat = '';
+        $hastaFormat = '';
+        $servidores = Servidor::orderBy('categoria')->get();
+        session(['id_servidor' => $id_servidor]);
+        $logs = Log::where('id_servidor', session('id_servidor'));
+        if ($desde || $hasta) {
+            $desdeFormat = $desde ? Carbon::parse($desde)->format('Y-m-d H:i') : null;
+            $hastaFormat = $hasta ? Carbon::parse($hasta)->format('Y-m-d H:i') : null;
+
+            if ($desdeFormat && $hastaFormat) {
+                $logs = $logs->whereBetween('tiempo', [$desdeFormat, $hastaFormat]);
+            } elseif ($desdeFormat) {
+                $logs = $logs->where('tiempo', '>=', $desdeFormat);
+            } elseif ($hastaFormat) {
+                $logs = $logs->where('tiempo', '<=', $hastaFormat);
+            }
+        }
+        if (!$tipoSel == null){
+            $logs = $logs->where('tipo','like', '%'.$tipoSel.'%');
+        }
+        if (!$nombreBusqeuda == null){
+            $logs = $logs->where('nombre_jugador','like', '%'.$nombreBusqeuda.'%');
+        }
+        if (!$steamId == null){
+            $logs = $logs->where('steam','like', '%'.$steamId.'%');
+        }
+        $logs = $logs->orderBy('tiempo','desc')->paginate(90);
+        $tipos = Log::select('tipo')->distinct('tipo')->get();
+        return view('paginas.logs', compact('servidores','logs','tipos','nombreBusqeuda','steamId','tipoSel','desdeFormat','hastaFormat'));
     }
     /**
      * Show the form for creating a new resource.
