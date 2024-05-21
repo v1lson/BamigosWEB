@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Bans extends Model
 {
     use HasFactory;
-    protected $fillable=['id','estado','id_servidor','steamid','nombre','razon','nombre_moderador','tiempo_inicio',"tiempo_final","nombre_panlizador"];
+    protected $fillable=['id','estado','id_servidor','steam_id','nombre','razon','nombre_moderador','tiempo_inicio',"tiempo_final","nombre_panlizador"];
 }

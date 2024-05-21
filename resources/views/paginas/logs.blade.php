@@ -77,5 +77,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Logs | Bamigos
 @endsection

@@ -116,5 +116,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Mutes | Bamigos
 @endsection

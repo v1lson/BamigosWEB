@@ -9,6 +9,7 @@
     <meta name="keywords" content="Counter-Strike, CS, servidores de CS, juegos en línea, comunidad de juegos, amigos, Bamigos">
     <meta name="author" content="Equipo Bamigos">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" sizes="265x205" href="{{ asset('favicon.png') }}" type="image/png">
     <title>@yield("titulo")</title>
     @vite("resources/css/app.css")
     @vite("public/js/bienvenida.js")

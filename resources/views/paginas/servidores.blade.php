@@ -132,5 +132,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Gestion Serviodres | Bamigos
 @endsection

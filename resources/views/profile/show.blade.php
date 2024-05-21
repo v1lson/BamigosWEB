@@ -209,5 +209,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    {{ $usuario->name }} | Bamigos
 @endsection

@@ -128,5 +128,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Bans | Bamigos
 @endsection

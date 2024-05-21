@@ -42,5 +42,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Administradores | Bamigos
 @endsection

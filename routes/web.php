@@ -38,13 +38,15 @@ Route::get('/login', \App\Http\Controllers\Auth\SteamAuthController::class);
 
 Route::middleware([CheckFlagB::class])->group(function () {
     Route::get('/Bans/DeleteBan/{id}/{user}', [BansController::class, 'update'])->name('Bans.update');
-    Route::post('/Castigos/{id_servidor}/Castigar', [BansController::class, 'create'])->name('Bans.create');
-    Route::post('/Castigos/Store', [BansController::class, 'store'])->name('Bans.store');
+    Route::post('/Castigos/{id_servidor}/Banear', [BansController::class, 'create'])->name('Bans.create');
+    Route::post('/Castigos/GuardarBan', [BansController::class, 'store'])->name('Bans.store');
     Route::post('/Castigos/Kick', [BansController::class, 'kick'])->name('Bans.kick');
     Route::get('/Castigos/{id_servidor}', [ServidorController::class, 'verTodosCastigos'])->name('Servidores.castigos');
 });
 Route::middleware([CheckFlagM::class])->group(function () {
     Route::get('/Mute/DeleteMute/{id}/{user}', [MuteController::class, 'update'])->name('Mute.update');
+    Route::post('/Castigos/{id_servidor}/Mutear', [MuteController::class, 'create'])->name('Mute.create');
+    Route::post('/Castigos/GuardarMute', [MuteController::class, 'store'])->name('Mute.store');
 });
 Route::middleware([CheckFlagL::class])->group(function () {
     Route::resource("Logs", LogController::class);

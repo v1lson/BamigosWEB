@@ -169,5 +169,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Estadistica | Bamgios
 @endsection

@@ -53,14 +53,18 @@
     <div class="float-left">
         @if(isset($nombre))
         <div class="w-80 h-full mt-5 ">
+            @if(isset($ban))
             <form action="{{ route('Bans.store') }}" method="POST" class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 flex flex-col items-center justify-center">
+            @elseif(isset($mute))
+             <form action="{{ route('Mute.store') }}" method="POST" class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 flex flex-col items-center justify-center">
+            @endif
                 <h3 class="font-bold text-xl">Ban Menu</h3>
                 @csrf
                 @method('POST')
                 <x-text-input class="mt-3" type="text" name="nombre" value="{{ $nombre }}" readonly/>
 
-                <x-text-input class="mt-3" type="text" name="razon" value="" placeholder="Razon"/>
-
+                <x-text-input id="razon" class="mt-3" type="text" name="razon" minlength="5" value="" placeholder="Razon"/>
+                <x-input-error class="mt-2" :messages="$errors->get('razon')" /><br>
                 <select name="periodo" id="periodo" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-3 w-60">
                     <option value="1800">30 minutos</option>
                     <option value="3600">1 hora</option>
@@ -88,7 +92,7 @@
             @foreach($servidores as $servidor)
                 @if(session('id_servidor') ==  $servidor->id)
                     <li class=""><a class="text-white bg-principal"
-                                    href="">{{$servidor->nombre}}</a>
+                                    href="{{ route('Servidores.castigos', $servidor->id) }}">{{$servidor->nombre}}</a>
                     </li>
                 @else
                     <li><a href="{{ route('Servidores.castigos', $servidor->id) }}">{{$servidor->nombre}}</a></li>
@@ -120,7 +124,10 @@
                         <x-text-input type="hidden" name="nombre" value="{{ $Player['Name']  }}"/>
                         <input class="btn btn-ghost bg-principal text-white" type="submit" value="Ban">
                     </form>
-                    <form action="">
+                    <form action="{{ route("Mute.create",session('id_servidor')) }}"  method="POST">
+                        @csrf
+                        @method("POST")
+                        <x-text-input type="hidden" name="nombre" value="{{ $Player['Name']  }}"/>
                         <input class="btn btn-ghost bg-red-600 text-white ml-3" type="submit" value="Mute">
                     </form>
                     <form action="{{ route("Bans.kick") }}" method="POST">
@@ -137,5 +144,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Admin Panel | Bamigos
 @endsection

@@ -162,5 +162,5 @@
 @endsection
 
 @section("titulo")
-    Alumno
+    Roles | Bamigos
 @endsection

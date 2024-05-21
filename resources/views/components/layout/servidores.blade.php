@@ -28,7 +28,7 @@ $categorias = Servidor::distinct()->pluck('categoria')->toArray();;
             @if(isset($Info["Players"]))
             <div class="card w-80 h-12 shadow-xl image-full">
                 <figure><img class="w-full" src="{{asset("images/mapas/$mapa.jpg")}}"
-                             alt="Mirage"/></figure>
+                             alt="{{ $Info["Map"] }}"/></figure>
                 <div class="card-body flex-nowrap flex-row content-center justify-around">
                     <div>
                         <p class="text-left"><?php echo $servidor->nombre ?></p>

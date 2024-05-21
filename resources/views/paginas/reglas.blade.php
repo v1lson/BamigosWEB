@@ -92,8 +92,6 @@
     </div>
 @endsection
 @section("titulo")
-    ⚖️Reglas | Bamigos
+    Reglas | Bamigos
 @endsection
-@section("descripcion")
-    Proyecto de aprendizaje de laravel. usamos los diferentes elementos
-@endsection
+
