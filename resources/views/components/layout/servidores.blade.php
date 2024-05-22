@@ -56,6 +56,11 @@ $categorias = Servidor::distinct()->pluck('categoria')->toArray();;
                     </div>
                 </div>
             </div>
+            @else
+                <div class="card w-80 h-12 shadow-xl text-white bg-principal">
+                    <p>No se pudo caragar el servidor</p>
+                    <p class="font-bold">{{ $servidor->nombre  }}</p>
+                </div>
             @endif
         @endforeach
     </div>

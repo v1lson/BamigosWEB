@@ -17,7 +17,13 @@
         </div>
     </div>
     <div>
-        <x-layout.servidores :servidores="$servidores"/>
+       @if($servidores->count() > 0)
+            <x-layout.servidores :servidores="$servidores"/>
+        @else
+          <div class="flex mt-10">
+              <img class="mx-auto" src="{{ asset("images/404.png") }}" alt="">
+          </div>
+       @endif
         <div class="h-full flex flex-wrap justify-evenly w-2/3">
             <x-layout.rating :servidores="$servidores"/>
         </div>
