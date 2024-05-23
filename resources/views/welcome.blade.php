@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Bamigos</title>
         <script src="https://www.youtube.com/iframe_api"></script>
         @vite("resources/css/app.css")
-        @vite("resources/js/bienvenida.jsa")
+        <script src=" {{asset('js/bienvenida.js')}}"></script>
         <style>
             .card.image-full:before{
                 border-radius: 0px;
@@ -28,7 +28,7 @@
                    <p class="bg-texto p-6 rounded-2xl w-">¡Bienvenidos a Bamigos CS2! Si eres un apasionado de CS2 y disfrutas jugando en nuestros servidores, has llegado al lugar adecuado. En Bamigos CS2, nos enorgullece ofrecer una experiencia de juego excepcional y única para todos nuestros jugadores, y estamos emocionados de tenerte como parte de nuestra comunidad.</p>
                    <div class="flex justify-evenly mt-6">
                        <a href="/"><button class="btn border-0 bg-texto text-white w-56 h-14 text-xl">Pagina Principal</button></a>
-                       <a href="/reglas"><button class="btn text-principal w-56 h-14 text-xl">Reglas</button></a>
+                       <a href="/reglas"><button class="btn bg-white border-white  text-principal w-56 h-14 text-xl">Reglas</button></a>
                    </div>
                    <a target="_blank" class="mt-10" href="https://www.youtube.com/@Sparkles" title="Youtube de auto del video del fondo">
                        <button>Youtube de Autor</button>

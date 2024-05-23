@@ -8,6 +8,7 @@ services:
     # Para no perder los datos cuando destryamos el contenedor, se guardara en ese derectorio
     volumes:
       - ./datos:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
     ports:
       - ${DB_PORT}:3306
     environment:
