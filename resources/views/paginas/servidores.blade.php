@@ -26,8 +26,8 @@
 @endsection
 @section("contenido")
     <h2 class="text-center text-2xl text-principal font-bold">Servidores</h2>
-    <a href="{{ route('Servidores.create') }}"><button class="mt-5 btn btn-ghost bg-principal text-white ml-2">Crear Servidor</button></a>
-    <table class="table bg-white shadow table-zebra mt-5 mb-5 w-8/12 float-left">
+    <a href="{{ route('Servidores.create') }}"><button class="pb-96 mt-5 btn btn-ghost bg-principal text-white ml-2">Crear Servidor</button></a>
+    <table class="table bg-white shadow table-zebra mt-5 mb-5 w-7/12 float-left">
         <tr>
             <th>Id</th>
             <th>Categoria</th>

@@ -27,7 +27,7 @@
 @section("contenido")
     <h2 class="text-center text-2xl text-principal font-bold">Roles</h2>
     <a href="{{ route('Roles.create') }}"><button class="mt-5 btn btn-ghost bg-principal text-white ml-2">Crear Rol</button></a>
-    <table class="table bg-white shadow table-zebra mt-5 mb-5 w-8/12 float-left">
+    <table class="table bg-white shadow table-zebra mt-5 mb-5 w-7/12 float-left ">
         <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -78,8 +78,8 @@
             </tr>
         @endforeach
     </table>
-    @if(isset($crear))
-        <div class="w-80 h-full float-right mt-5 ">
+	@if(isset($crear))
+        <div class="w-80 h-full float-right mt-5 pb-96 ">
             <form action="{{route('Roles.store') }}" method="POST" class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 flex flex-col items-center justify-center">
                 <h3 class="font-bold text-xl">Crear Rol</h3>
                 @csrf
@@ -89,7 +89,6 @@
 
                 <x-text-input class="mt-3" type="text" name="flags" value="" placeholder="Flags"/>
                 <x-input-error class="mt-2" :messages="$errors->get('flags')"/><br>
-
                 <x-primary-button class="mt-5">Crear</x-primary-button>
             </form>
             <div class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 text-center">

@@ -71,7 +71,8 @@
             @endif
         @endforeach
     </ul>
-    <table class="w-10/12 table bg-white shadow table-zebra mt-5 mb-5 ml-64">
+   <div style=" overflow-x: auto;">
+    <table class="w-11/12 table bg-white shadow table-zebra mt-5 mb-5 ml-10">
         <tr>
             <th>Estado</th>
             <th>Nombre</th>
@@ -122,6 +123,7 @@
             </tr>
         @endforeach
     </table>
+    </div>
     <div class="p-5">
         {{ $bans->links() }}
     </div>

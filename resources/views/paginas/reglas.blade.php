@@ -12,7 +12,7 @@
 @section("contenido")
     <h2 class="text-center text-2xl text-principal font-bold">Reglas</h2>
     <div role="tablist" class="tabs tabs-lifted mt-10">
-        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="1. Generales"  checked/>
+        <input type="radio" name="my_tabs_2" role="tab" style="width:150px" class="tab" aria-label="1. Generales"  checked/>
         <div role="tabpanel" class="shadow tab-content bg-white rounded-box p-6">
             <table class="table table-zebra ">
                 <tr>
@@ -38,7 +38,7 @@
             </table>
         </div>
 
-        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="2. Jugadores"  />
+        <input type="radio" name="my_tabs_2" role="tab" style="width:150px"  class="tab" aria-label="2. Jugadores"  />
         <div role="tabpanel" class="shadow tab-content bg-white rounded-box p-6">
             <table class="table table-zebra ">
                 <tr>
@@ -64,7 +64,7 @@
             </table>
         </div>
 
-        <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="3. Moderadores" />
+        <input type="radio" name="my_tabs_2" role="tab" style="width:150px"  class="tab" aria-label="3. Moderadores" />
         <div role="tabpanel" class="shadow tab-content bg-white rounded-box p-6">
             <table class="table table-zebra ">
                 <tr>

@@ -26,7 +26,7 @@ $categorias = Servidor::distinct()->pluck('categoria')->toArray();;
                 }
                 ?>
             @if(isset($Info["Players"]))
-            <div class="card w-80 h-12 shadow-xl image-full">
+            <div class="card w-3/12 h-12 shadow-xl image-full ml-10">
                 <figure><img class="w-full" src="{{asset("images/mapas/$mapa.jpg")}}"
                              alt="{{ $Info["Map"] }}"/></figure>
                 <div class="card-body flex-nowrap flex-row content-center justify-around">
@@ -57,7 +57,7 @@ $categorias = Servidor::distinct()->pluck('categoria')->toArray();;
                 </div>
             </div>
             @else
-                <div class="card w-80 h-12 shadow-xl text-white bg-principal">
+                <div class="card w-4/12 h-12 shadow-xl text-white bg-principal">
                     <p>No se pudo caragar el servidor</p>
                     <p class="font-bold">{{ $servidor->nombre  }}</p>
                 </div>

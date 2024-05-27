@@ -17,10 +17,10 @@
       <h2 class="text-white font-bold text-center text-2xl bg-principal p-2 rounded-t-2xl">Administradores</h2>
       <table class="w-full">
           @foreach($admins as $admin)
-              <tr class="p-3 border-t-4 border-principal">
+              <tr class="p-3 border-t-4 border-principal ">
                   <td class="p-3 w-24"><a href="{{ route('profile.show', ['id' => $admin->id]) }}">
                           <img class="mask mask-circle w-16" src="{{ $admin->avatar }}" alt=""></a></td>
-                  <td class="text-xl text-red-600 text-left"><a href="{{ route('profile.show', ['id' => $admin->id]) }}">
+                  <td class="text-xl text-red-600 text-left "><a href="{{ route('profile.show', ['id' => $admin->id]) }}">
                       {{ $admin->name }}</a></td>
               </tr>
           @endforeach

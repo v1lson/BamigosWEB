@@ -11,7 +11,7 @@
             </figure>
             <div class="card-body items-center text-center">
                 <div class="card-actions">
-                    <button class="btn bg-white text-texto">Contactar</button>
+                    <a href="https://vk.com/im?sel=-9790509" target="_blank"> <button class="btn bg-white text-texto">Contactar</button></a>
                 </div>
             </div>
         </div>

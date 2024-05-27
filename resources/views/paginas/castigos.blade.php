@@ -52,7 +52,7 @@
 
     <div class="float-left">
         @if(isset($nombre))
-        <div class="w-80 h-full mt-5 ">
+        <div class="w-72 h-full mt-5 ">
             @if(isset($ban))
             <form action="{{ route('Bans.store') }}" method="POST" class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 flex flex-col items-center justify-center">
             @elseif(isset($mute))
@@ -64,8 +64,7 @@
                 <x-text-input class="mt-3" type="text" name="nombre" value="{{ $nombre }}" readonly/>
 
                 <x-text-input id="razon" class="mt-3" type="text" name="razon" minlength="5" value="" placeholder="Razon"/>
-                <x-input-error class="mt-2" :messages="$errors->get('razon')" /><br>
-                <select name="periodo" id="periodo" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-3 w-60">
+                <select name="periodo" id="periodo" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-3 w-52">
                     <option value="1800">30 minutos</option>
                     <option value="3600">1 hora</option>
                     <option value="28800">8 horas</option>

@@ -59,7 +59,7 @@
             @endif
         @endforeach
     </ul>
-    <table class="w-10/12 table bg-white table shadow table-zebra mt-5 mb-5 ml-64">
+    <table class="w-9/12 table bg-white table shadow table-zebra mt-5 mb-5 ml-64">
         <tr>
             <th>Estado</th>
             <th>Nombre</th>

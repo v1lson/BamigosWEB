@@ -27,7 +27,7 @@
 
 <x-layout.nav />
 
-<main class="ml-0 sm:ml-64 mt-10 mr-12">
+<main class="ml-0 sm:ml-64 mt-10 mr-12 h-100vh ">
     @yield("contenido")
 </main>
 
