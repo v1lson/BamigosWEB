@@ -59,7 +59,8 @@
             @endif
         @endforeach
     </ul>
-    <table class="w-9/12 table bg-white table shadow table-zebra mt-5 mb-5 ml-64">
+    <div style="overflow-x: auto;">
+    <table style="width:95%;" class="table bg-white table shadow table-zebra mt-5 mb-5 ml-10">
         <tr>
             <th>Estado</th>
             <th>Nombre</th>
@@ -110,6 +111,7 @@
             </tr>
         @endforeach
     </table>
+    </div>
     <div class="h-20">
         {{ $mutes->links() }}
     </div>

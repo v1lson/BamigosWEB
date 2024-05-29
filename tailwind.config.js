@@ -25,7 +25,10 @@ export default {
                 "texto":"#232323",
                 "fondo":"#EBEBEB",
                 "footer":"#145A84"
-            }
+            },
+	    witdh:{
+		"95":"95%"
+		}
 
         },
     },

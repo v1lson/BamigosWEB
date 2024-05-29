@@ -52,7 +52,7 @@
 
     <div class="float-left">
         @if(isset($nombre))
-        <div class="w-72 h-full mt-5 ">
+        <div class="w-72 h-full">
             @if(isset($ban))
             <form action="{{ route('Bans.store') }}" method="POST" class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 flex flex-col items-center justify-center">
             @elseif(isset($mute))
@@ -99,7 +99,7 @@
             @endforeach
         </ul>
     </div>
-    <table class="w-8/12 table bg-white shadow table-zebra mt-5 mb-5 ml-96">
+    <table class="w-8/12 table bg-white shadow table-zebra mt-5 mb-5" style="margin-left:330px">
         <tr>
             <th>Nombre</th>
             <th>Kills</th>

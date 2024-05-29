@@ -22,7 +22,7 @@
         @endforeach
     </ul>
    <div class="overflow-x-auto">
-    <table class="w-10/12 table tab-content bg-white shadow table-zebra mt-5 mb-5 ml-10">
+    <table style="width:95%" class="table tab-content bg-white shadow table-zebra mt-5 mb-5 ml-10">
         <tr>
             <th><a class="flex items-center" href="{{ route('est', ['id_servidor' => session('id_servidor'), 'order_by' => 'value', 'orden' => session('orden')]) }}">
                     Valor

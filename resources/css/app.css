@@ -13,4 +13,6 @@
     background-color: #FF5E3A !important; /* Cambia el color de fondo del botón de confirmar */
     border-color: #FF5E3A !important; /* Cambia el color del borde del botón de confirmar */
 }
-
+.witdh-tabla{
+	witdh:95%;
+}

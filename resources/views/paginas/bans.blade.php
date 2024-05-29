@@ -72,7 +72,7 @@
         @endforeach
     </ul>
    <div style=" overflow-x: auto;">
-    <table class="w-11/12 table bg-white shadow table-zebra mt-5 mb-5 ml-10">
+    <table style="width:95%" class="table bg-white shadow table-zebra mt-5 mb-5 ml-10">
         <tr>
             <th>Estado</th>
             <th>Nombre</th>

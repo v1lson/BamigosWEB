@@ -26,7 +26,7 @@
 @endsection
 @section("contenido")
     <h2 class="text-center text-2xl text-principal font-bold">Servidores</h2>
-    <a href="{{ route('Servidores.create') }}"><button class="pb-96 mt-5 btn btn-ghost bg-principal text-white ml-2">Crear Servidor</button></a>
+    <a href="{{ route('Servidores.create') }}"><button class="mt-5 btn btn-ghost bg-principal text-white ml-2">Crear Servidor</button></a>
     <table class="table bg-white shadow table-zebra mt-5 mb-5 w-7/12 float-left">
         <tr>
             <th>Id</th>
@@ -83,23 +83,23 @@
                 <h3 class="font-bold text-xl">Crear Servidor</h3>
                 @csrf
                 @method('POST')
-                <x-text-input class="mt-3" type="text" name="categoria" value="" placeholder="Categoria"/>
-                <x-input-error class="mt-2" :messages="$errors->get('categoria')" /><br>
+                <x-text-input class="mt-2" type="text" name="categoria" value="" placeholder="Categoria"/>
+                <x-input-error class="" :messages="$errors->get('categoria')" /><br>
 
-                <x-text-input class="mt-3" type="text" name="nombre" value="" placeholder="Nombre"/>
+                <x-text-input class="" type="text" name="nombre" value="" placeholder="Nombre"/>
                 <x-input-error class="mt-2" :messages="$errors->get('nombre')" /><br>
 
-                <x-text-input class="mt-3" type="text" name="ip" value="" placeholder="Ip"/>
+                <x-text-input class="" type="text" name="ip" value="" placeholder="Ip"/>
                 <x-input-error class="mt-2" :messages="$errors->get('ip')"/><br>
 
-                <x-text-input class="mt-3" type="text" name="puerto" value="" placeholder="Puerto"/>
+                <x-text-input class="" type="text" name="puerto" value="" placeholder="Puerto"/>
                 <x-input-error class="mt-2" :messages="$errors->get('puerto')"/><br>
 
-                <x-text-input class="mt-3" type="text" name="rcon" value="" placeholder="Rcon"/>
+                <x-text-input class="" type="text" name="rcon" value="" placeholder="Rcon"/>
                 <x-input-error class="mt-2" :messages="$errors->get('rcon')"/><br>
 
-                <x-text-input class="mt-3" type="hidden" name="created_by" value="{{ auth()->user()->id  }}"/>
-                <x-primary-button class="mt-5">Crear</x-primary-button>
+                <x-text-input class="" type="hidden" name="created_by" value="{{ auth()->user()->id  }}"/>
+                <x-primary-button class="mt-3">Crear</x-primary-button>
             </form>
         </div>
     @endif
@@ -109,23 +109,23 @@
                 <h3 class="font-bold text-xl">Editar Servidor</h3>
                 @csrf
                 @method('PUT')
-                <x-text-input class="mt-3" type="text" name="categoria" value="{{ $servidorMod->categoria }}" placeholder="Categoria"/>
+                <x-text-input class="" type="text" name="categoria" value="{{ $servidorMod->categoria }}" placeholder="Categoria"/>
                 <x-input-error class="mt-2" :messages="$errors->get('categoria')" /><br>
 
-                <x-text-input class="mt-3" type="text" name="nombre" value="{{ $servidorMod->nombre }}" placeholder="Nombre"/>
+                <x-text-input class="" type="text" name="nombre" value="{{ $servidorMod->nombre }}" placeholder="Nombre"/>
                 <x-input-error class="mt-2" :messages="$errors->get('nombre')" /><br>
 
-                <x-text-input class="mt-3" type="text" name="ip" value="{{ $servidorMod->ip }}" placeholder="Ip"/>
+                <x-text-input class="" type="text" name="ip" value="{{ $servidorMod->ip }}" placeholder="Ip"/>
                 <x-input-error class="mt-2" :messages="$errors->get('ip')"/><br>
 
-                <x-text-input class="mt-3" type="text" name="puerto" value="{{ $servidorMod->puerto }}" placeholder="Puerto"/>
+                <x-text-input class="" type="text" name="puerto" value="{{ $servidorMod->puerto }}" placeholder="Puerto"/>
                 <x-input-error class="mt-2" :messages="$errors->get('puerto')"/><br>
 
-                <x-text-input class="mt-3" type="text" name="rcon" value="{{ $servidorMod->rcon }}" placeholder="Rcon"/>
+                <x-text-input class="" type="text" name="rcon" value="{{ $servidorMod->rcon }}" placeholder="Rcon"/>
                 <x-input-error class="mt-2" :messages="$errors->get('rcon')"/><br>
 
-                <x-text-input class="mt-3" type="hidden" name="created_by" value="{{ auth()->user()->id  }}"/>
-                <x-primary-button class="mt-5">Actualizar</x-primary-button>
+                <x-text-input class="" type="hidden" name="created_by" value="{{ auth()->user()->id  }}"/>
+                <x-primary-button class="mt-3">Actualizar</x-primary-button>
             </form>
         </div>
     @endif
