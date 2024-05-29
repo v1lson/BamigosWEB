@@ -40,16 +40,13 @@ Agradecemos cualquier contribución de la comunidad. Si deseas colaborar, por fa
 4. Sube tu rama (`git push origin feature/nueva-funcion`).
 5. Crea un nuevo Pull Request.
 
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
 ## Contacto
 
 Para cualquier consulta o sugerencia, puedes contactar a los administradores del proyecto a través de los siguientes medios:
 
 - **Correo electrónico**: contacto@bamigos.com
-- **Discord**: [Enlace al servidor de Discord](https://discord.gg/ejemplo)
+- **Discord**: [Discord de Bamigos](https://discord.com/invite/Gxgq7WE6rw)
+- **Web**: http://16.170.233.18/
 
 ---
 
