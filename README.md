@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="http://16.170.233.18/images/logo.png" width="400" alt="Bamigos Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="http://16.170.233.18/images/Principal.png" width="400" alt="Bamigos Logo"></a></p>
 
 # Proyecto Bamigos
 
