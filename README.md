@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://16.170.233.18/images/logo.png" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="http://16.170.233.18/images/logo.png" width="400" alt="Bamigos Logo"></a></p>
 
 # Proyecto Bamigos
 
@@ -26,13 +26,9 @@ Bamigos no opera como una entidad comercial. Es una comunidad abierta compuesta 
 
 ## Recursos Necesarios
 
-- Herramientas y tecnologías: Laravel, MySQL, Tailwind, Node.js, JavaScript.
+- Herramientas y tecnologías: Laravel, MySQL, Tailwind, Node.js, JavaScript, Composer.
 - Plataformas colaborativas: Miro, GitHub, Figma, ClickUp.
 - Un servidor web para alojar y ejecutar el proyecto.
-
-## Manual del Usuario
-
-El manual del usuario se encuentra en la sección 5.4 del documento, donde se presenta una simulación de navegación por las aplicaciones para mostrar sus diversas pantallas y funciones.
 
 ## Contribuciones
 
