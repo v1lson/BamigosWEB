@@ -19,6 +19,13 @@
      @vite("resources/css/app.css")
     <script src=" {{asset('js/bienvenida.js')}}"></script>
     <script src=" {{asset('js/navscroll.js')}}"></script>
+    <style>
+      .clearfix::after {
+   	 content: "";
+    	clear: both;
+    	display: table;
+      } 
+    </style>
     @yield("cabecera")
 </head>
 <body class="bg-fondo min-h-screen">
@@ -27,7 +34,7 @@
 
 <x-layout.nav />
 
-<main class="ml-0 sm:ml-64 mt-10 mr-12 h-100vh ">
+<main class="ml-0 sm:ml-64 mt-10 mr-12 h-100vh clearfix">
     @yield("contenido")
 </main>
 

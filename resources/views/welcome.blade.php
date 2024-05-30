@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Bamigos</title>
+	<link rel="shortcut icon" sizes="265x205" href="{{ asset('favicon.png') }}" type="image/png">
         <script src="https://www.youtube.com/iframe_api"></script>
         @vite("resources/css/app.css")
         <script src=" {{asset('js/bienvenida.js')}}"></script>

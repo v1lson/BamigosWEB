@@ -67,7 +67,6 @@
                                         </button>
                                     </form>
                                     <form method="dialog">
-                                        <!-- if there is a button in form, it will close the modal -->
                                         <button class="btn">Close</button>
                                     </form>
                                 </div>
@@ -79,7 +78,7 @@
         @endforeach
     </table>
 	@if(isset($crear))
-        <div class="w-80 h-full float-right mt-5 pb-96 ">
+        <div class="w-80 h-full mt-5 float-right ">
             <form action="{{route('Roles.store') }}" method="POST" class="rounded-2xl bg-white shadow-md pt-6 pb-8 mb-4 flex flex-col items-center justify-center">
                 <h3 class="font-bold text-xl">Crear Rol</h3>
                 @csrf

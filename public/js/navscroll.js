@@ -6,7 +6,7 @@
 } else {
     $('navbar').css('top', '0px');
     $('navbar').css('height', '100vh');
-    $('navbar ul').css('margin-top', '20vh');
+    $('navbar #menu').css('margin-top', '20vh');
     $('main').css('padding-bottom', '70px');
 }
 });
