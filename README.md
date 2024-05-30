@@ -1,66 +1,54 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="http://16.170.233.18/images/Principal.png" width="400" alt="Bamigos Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Proyecto Bamigos
 
-## About Laravel
+## Descripción del Proyecto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Bamigos** es una iniciativa comunitaria centrada en el juego **Counter-Strike 2**. El propósito principal es establecer una conexión entre el servidor web y el servidor del juego para recopilar datos. Además, busca implementar funcionalidades que no son viables dentro del juego y actuar como una herramienta de gestión para el servidor.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Objetivos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Conectar el servidor web con el servidor de juego para la recolección de datos.
+- Implementar funcionalidades adicionales no disponibles en el juego.
+- Proveer una herramienta de gestión para administradores de servidores de CS2.
 
-## Learning Laravel
+## Vinculación a Empresa
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Bamigos no opera como una entidad comercial. Es una comunidad abierta compuesta por jugadores voluntarios que colaboran de manera altruista.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Actividades a Realizar
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Análisis y evaluación de las funcionalidades del sitio web.
+- Diseño y estructuración de la base de datos.
+- Creación y desarrollo de la página web.
+- Programación del código necesario para asegurar la funcionalidad deseada.
+- Realización de pruebas y despliegue del sitio web.
 
-## Laravel Sponsors
+## Recursos Necesarios
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Herramientas y tecnologías: Laravel, MySQL, Tailwind, Node.js, JavaScript, Composer.
+- Plataformas colaborativas: Miro, GitHub, Figma, ClickUp.
+- Un servidor web para alojar y ejecutar el proyecto.
 
-### Premium Partners
+## Contribuciones
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Agradecemos cualquier contribución de la comunidad. Si deseas colaborar, por favor, sigue estos pasos:
 
-## Contributing
+1. Haz un fork del repositorio.
+2. Crea una nueva rama para tu función o corrección de errores (`git checkout -b feature/nueva-funcion`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Agrega nueva función'`).
+4. Sube tu rama (`git push origin feature/nueva-funcion`).
+5. Crea un nuevo Pull Request.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Contacto
 
-## Code of Conduct
+Para cualquier consulta o sugerencia, puedes contactar a los administradores del proyecto a través de los siguientes medios:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Correo electrónico**: contacto@bamigos.com
+- **Discord**: [Discord de Bamigos](https://discord.com/invite/Gxgq7WE6rw)
+- **Web**: http://16.170.233.18/
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Este README proporciona una visión general del proyecto Bamigos, sus objetivos, actividades, y cómo puedes contribuir. Para detalles más específicos y manual de usuario, consulta la documentación completa en el repositorio.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
